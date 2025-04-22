@@ -2,7 +2,6 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import { PrismaClient } from '@prisma/client';
-import { configDotenv } from 'dotenv';
 
 dotenv.config();
 
@@ -70,7 +69,7 @@ app.get('/api/user/:clerkUserId', async (req, res) => {
     res.status(200).json({user: userData})
   } catch(err) {
     console.log('Error fetching userData:', err);
-    res.status(500).json({message: 'Server error', error})
+    res.status(500).json({message: 'Server error', error: err})
   }
 })
 
