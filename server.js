@@ -20,7 +20,7 @@ const prisma = new PrismaClient();
 app.post('/api/user', async (req, res) => {
   const { clerkUserId, email, preferredName, formattedAddress, latitude, longitude, demoData } = req.body;
 
-  onsole.log('Incoming request body:', req.body);
+  console.log('Incoming request body:', req.body);
 
   if (!clerkUserId || !email) {
     return res.status(400).json({ message: 'Missing clerkUserId or email' });
